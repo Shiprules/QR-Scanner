@@ -6,7 +6,7 @@ function makeQR() {
     var params = new URLSearchParams();
     params.append("name", document.getElementById("name").value)
     var qr = qrcode(typeNumber, errorCorrectionLevel);
-qr.addData(location.origin+'?'+params.toString());
+qr.addData(location.href+'?'+params.toString());
 qr.make();
 document.getElementById('placeholder').innerHTML = qr.createImgTag();
 
