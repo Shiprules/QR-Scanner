@@ -4,7 +4,7 @@ var errorCorrectionLevel = 'L';
 function makeQR() {
     
     var params = new URLSearchParams();
-    params.append("name", document.getElementById("name").value)
+    params.append("to", document.getElementById("name").value)
     var qr = qrcode(typeNumber, errorCorrectionLevel);
 qr.addData(location.href+'?'+params.toString());
 qr.make();
@@ -14,7 +14,11 @@ document.getElementById('placeholder').innerHTML = qr.createImgTag();
 
 document.getElementById("name").oninput=makeQR;
 var params = new URLSearchParams(location.search);
-var name = params.get("name")
+var name = params.get("to")
+var subject = "Lost item!"
+params.append("subject", subject)
+var body = "You have lost an item at Lost and Found! Pick it up there."
+params.append("body", body)
 if (name!="null") {
-    location.replace("mailto:"+name)
+    location.replace("mailto:"+params.toString())
 }
