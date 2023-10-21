@@ -20,5 +20,5 @@ params.append("subject", subject)
 var body = "You have lost an item at Lost and Found! Pick it up there."
 params.append("body", body)
 if (name!="null") {
-    location.replace("mailto:"+params.toString())
+    location.replace("mailto:?"+params.toString())
 }
