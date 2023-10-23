@@ -1,4 +1,4 @@
-var typeNumber = 4;
+var typeNumber = 10;
 var errorCorrectionLevel = 'L';
 
 function makeQR() {
