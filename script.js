@@ -18,8 +18,12 @@ var name = params.get("to")
 var subject = "Lost item!"
 params.append("subject", subject)
 var body = "You have lost an item at Lost and Found! Pick it up there."
-var password = "password"
+var password = "nhsluypjl"
+var unscrambled = ""
+for (var i = 0; i<password.length; i++) {
+    unscrambled+=String.fromCharCode(password.charCodeAt(i)-7)
+}
 params.append("body", body)
-if (name!="null" && prompt("Enter password") == password) {
+if (name!="null" && prompt("Enter password") == unscrambled) {
     location.replace("mailto:?"+params.toString().replaceAll("+","%20"))
 }
