@@ -1,4 +1,4 @@
-var typeNumber = 10;
+var typeNumber = 10
 var errorCorrectionLevel = 'L';
 
 function makeQR() {
@@ -18,7 +18,8 @@ var name = params.get("to")
 var subject = "Lost item!"
 params.append("subject", subject)
 var body = "You have lost an item at Lost and Found! Pick it up there."
+var password = "password"
 params.append("body", body)
-if (name!="null") {
+if (name!="null" && prompt("Enter password") == password) {
     location.replace("mailto:?"+params.toString().replaceAll("+","%20"))
 }
