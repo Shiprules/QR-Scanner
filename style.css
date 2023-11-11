@@ -18,4 +18,5 @@ input:invalid {
 
 ol {
     list-style-type: decimal;
+    list-style-position: inside;
 }
