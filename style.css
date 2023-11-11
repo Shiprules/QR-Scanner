@@ -15,3 +15,7 @@ body {
 input:invalid {
     border-color: red;
 }
+
+ol {
+    list-style-type: decimal;
+}
