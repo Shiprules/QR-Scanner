@@ -1,25 +1,37 @@
+// QR code type
 var typeNumber = 10
+
+// Low level
 var errorCorrectionLevel = 'L';
 
+// Function to make QR code
 function makeQR() {
     
-    var params = new URLSearchParams();
-    params.append("to", document.getElementById("name").value)
+    // Paramaters for the QR code
     var qr = qrcode(typeNumber, errorCorrectionLevel);
+    var params = new URLSearchParams();
+    var cc = document.getElementById("cc").value
+    params.append("to", document.getElementById("name").value)
+    if (cc != "") {
+        params.append("cc", cc)
+    }
 qr.addData(location.href+'?'+params.toString());
 qr.make();
 document.getElementById('placeholder').innerHTML = qr.createImgTag();
 
 }
 
+// Send email
 document.getElementById("name").oninput=makeQR;
 var params = new URLSearchParams(location.search);
-var name = params.get("to")
-var subject = "Lost item!"
+var name = params.get("to") // Send email to name
+var subject = "Lost item!" // Subject of email
 params.append("subject", subject)
-var body = "You have lost an item at Lost and Found! Pick it up there."
+var body = "You have lost an item at Lost and Found! Pick it up there." // Body of email
+// Define the scrambled password
 var password = "nhsluypjl"
 var unscrambled = ""
+// Unscramble the password
 for (var i = 0; i<password.length; i++) {
     unscrambled+=String.fromCharCode(password.charCodeAt(i)-7)
 }
