@@ -22,7 +22,7 @@ document.getElementById('placeholder').innerHTML = qr.createImgTag();
 }
 
 // Send email
-document.getElementById("name").oninput=makeQR;
+document.getElementById("update").onclick=makeQR;
 var params = new URLSearchParams(location.search);
 var name = params.get("to") // Send email to name
 var subject = "Lost item!" // Subject of email
