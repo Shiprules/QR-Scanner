@@ -29,7 +29,7 @@ var subject = "Lost item!" // Subject of email
 params.append("subject", subject)
 var body = "You have lost an item at Lost and Found! Pick it up there." // Body of email
 // Define the scrambled password
-var password = "nhsluypjl"
+var password = "8=8?7"
 var unscrambled = ""
 // Unscramble the password
 for (var i = 0; i<password.length; i++) {
